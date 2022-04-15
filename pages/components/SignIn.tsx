@@ -8,7 +8,7 @@ const uiConfig = {
   // Popup signin flow rather than redirect flow.
   signInFlow: "popup",
   // Redirect to / after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-  signInSuccessUrl: "/",
+  signInSuccessUrl: "/UserPanel",
   // We will display GitHub as auth providers.
   signInOptions: [
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
