@@ -2,8 +2,11 @@ import React from "react";
 import firebase from "../../firebase/clientApp";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { IoWarningOutline } from "react-icons/io5";
+import loadTranslations from "../_loadTranslations";
 
 function Header() {
+  const texts = loadTranslations();
+
   // Destructure user, loading, and error our of the hook
   const [user, loading, error] = useAuthState(firebase.auth());
 
@@ -30,13 +33,12 @@ function Header() {
           {!user && (
             <div className="inline-flex items-center">
               <IoWarningOutline className="mr-4" />
-              Niezalogowany użytkownik!
+              {texts.header_unsignedUser}
             </div>
           )}
           {!!loading && <div>Ładowanie...</div>}
           {!!user && (
             <div className="inline-flex items-center">
-              {/* <div className="text-md font-medium">{user.email}</div> */}
               {!user.photoURL && <p>{user.displayName}</p>}
               {user.photoURL && (
                 <img
@@ -49,7 +51,7 @@ function Header() {
                 className="text-md bg-blue-400 p-2 rounded-md"
                 onClick={() => logout()}
               >
-                Wyloguj
+                {texts.header_signOut}
               </button>
             </div>
           )}
