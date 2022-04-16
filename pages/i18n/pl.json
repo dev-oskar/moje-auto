@@ -1,6 +1,27 @@
 {
-  "home_title": "Moje Auto",
-  "home_greeting": "Zacznij śledzić swoje wydatki!",
-  "header_signOut": "Wyloguj",
-  "header_unsignedUser": "Niezalogowany użytkownik!"
+  "home": {
+    "title": "Moje Auto",
+    "greeting": "Zacznij śledzić swoje wydatki!"
+  },
+  "header": {
+    "signOut": "Wyloguj"
+  },
+  "addExpense": {
+    "title": "Dodaj wydatek - Moje Auto",
+    "addExpense": "Dodaj wydatek",
+    "avgFuelUsage": "Średnie zużycie paliwa",
+    "carMileage": "Przebieg samochodu",
+    "fillingDate": "Data tankowania",
+    "fuelAmount": "Ilość paliwa",
+    "fuelPrice": "Cena paliwa",
+    "gasStation": "Stacja benzynowa",
+    "totalPrice": "Cena całości",
+    "totalRun": "Ilość przejechanych km",
+    "addButton": "Dodaj"
+  },
+  "messages": {
+    "unsignedUser": "Niezalogowany użytkownik!",
+    "loading": "Ładowanie...",
+    "fieldRequired": "Pole wymagane!"
+  }
 }

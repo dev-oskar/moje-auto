@@ -33,7 +33,7 @@ function Header() {
           {!user && (
             <div className="inline-flex items-center">
               <IoWarningOutline className="mr-4" />
-              {texts.header_unsignedUser}
+              {texts.messages.unsignedUser}
             </div>
           )}
           {!!loading && <div>Ładowanie...</div>}
@@ -51,7 +51,7 @@ function Header() {
                 className="text-md bg-blue-400 p-2 rounded-md"
                 onClick={() => logout()}
               >
-                {texts.header_signOut}
+                {texts.header.signOut}
               </button>
             </div>
           )}

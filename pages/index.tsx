@@ -17,8 +17,8 @@ function Home() {
       {!user && <SignIn />}
       {user && (
         <div className="md:container md:mx-auto">
-          <h1>{texts.home_title}</h1>
-          <h2>{texts.home_greeting}</h2>
+          <h1>{texts.home.title}</h1>
+          <h2>{texts.home.greeting}</h2>
         </div>
       )}
     </div>
