@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Head from "next/head";
 import SignIn from "../components/SignIn";
+import loadTranslations from "../_loadTranslations";
 
 type Inputs = {
   avgFuelUsage: string;
@@ -17,6 +18,7 @@ type Inputs = {
 };
 
 function AddExpense() {
+  const texts = loadTranslations();
   // Destructure user, loading, and error our of the hook
   const [user, loading, error] = useAuthState(firebase.auth());
 
@@ -38,22 +40,22 @@ function AddExpense() {
   return (
     <div className="w-full">
       <Head>
-        <title>Dodaj wydatek - Moje Auto</title>
+        <title>{texts.addExpense.title}</title>
       </Head>
-      {loading && <h4>Loading...</h4>}
+      {loading && <h4>{texts.messages.loading}</h4>}
       {!user && <SignIn />}
       {user && (
         <form
           className="bg-white m-auto shadow-md rounded px-8 pt-6 pb-8 mb-4 w-2/5"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1 className="font-semibold mb-4">Dodaj wydatek</h1>
+          <h1 className="font-semibold mb-4">{texts.addExpense.addExpense}</h1>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="avgFuelUsage"
             >
-              Średnie zużycie paliwa
+              {texts.addExpense.avgFuelUsage}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -61,7 +63,8 @@ function AddExpense() {
               type="text"
               {...register("avgFuelUsage", { required: true })}
             />
-            {errors.avgFuelUsage?.type === "required" && "Pole wymagane"}
+            {errors.avgFuelUsage?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -69,7 +72,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="carMileage"
             >
-              Przebieg samochodu
+              {texts.addExpense.carMileage}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -77,7 +80,8 @@ function AddExpense() {
               type="number"
               {...register("carMileage", { required: true })}
             />
-            {errors.carMileage?.type === "required" && "Pole wymagane"}
+            {errors.carMileage?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -85,7 +89,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="fillingDate"
             >
-              Data tankowania
+              {texts.addExpense.fillingDate}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -93,7 +97,8 @@ function AddExpense() {
               type="date"
               {...register("fillingDate", { required: true })}
             />
-            {errors.fillingDate?.type === "required" && "Pole wymagane"}
+            {errors.fillingDate?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -101,7 +106,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="fuelAmount"
             >
-              Ilość paliwa
+              {texts.addExpense.fuelAmount}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -109,7 +114,8 @@ function AddExpense() {
               type="number"
               {...register("fuelAmount", { required: true })}
             />
-            {errors.fuelAmount?.type === "required" && "Pole wymagane"}
+            {errors.fuelAmount?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -117,7 +123,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="fuelPrice"
             >
-              Cena paliwa
+              {texts.addExpense.fuelPrice}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -125,7 +131,8 @@ function AddExpense() {
               type="number"
               {...register("fuelPrice", { required: true })}
             />
-            {errors.fuelPrice?.type === "required" && "Pole wymagane"}
+            {errors.fuelPrice?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -133,7 +140,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="gasStation"
             >
-              Stacja benzynowa
+              {texts.addExpense.gasStation}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -141,7 +148,8 @@ function AddExpense() {
               type="text"
               {...register("gasStation", { required: true })}
             />
-            {errors.gasStation?.type === "required" && "Pole wymagane"}
+            {errors.gasStation?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -149,7 +157,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="totalPrice"
             >
-              Cena całości
+              {texts.addExpense.totalPrice}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -157,7 +165,8 @@ function AddExpense() {
               type="number"
               {...register("totalPrice", { required: true })}
             />
-            {errors.totalPrice?.type === "required" && "Pole wymagane"}
+            {errors.totalPrice?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
           <div className="mb-4">
@@ -165,7 +174,7 @@ function AddExpense() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="totalRun"
             >
-              Ilość przejechanych km
+              {texts.addExpense.totalRun}
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -173,10 +182,13 @@ function AddExpense() {
               type="number"
               {...register("totalRun", { required: true })}
             />
-            {errors.totalRun?.type === "required" && "Pole wymagane"}
+            {errors.totalRun?.type === "required" &&
+              texts.messages.fieldRequired}
           </div>
           <br />
-          <button className="sidebar-btn w-full">Dodaj</button>
+          <button className="sidebar-btn w-full">
+            {texts.addExpense.addButton}
+          </button>
         </form>
       )}
     </div>

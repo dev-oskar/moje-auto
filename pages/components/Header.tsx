@@ -2,8 +2,15 @@ import React from "react";
 import firebase from "../../firebase/clientApp";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { IoWarningOutline } from "react-icons/io5";
+import loadTranslations from "../_loadTranslations";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 function Header() {
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
+  const texts = loadTranslations();
+
   // Destructure user, loading, and error our of the hook
   const [user, loading, error] = useAuthState(firebase.auth());
 
@@ -23,20 +30,24 @@ function Header() {
   return (
     <header className="h-16 w-full flex items-center relative justify-end px-5 space-x-10 bg-gray-800">
       <div className="w-full flex items-center relative justify-center">
-        <p className="text-white ml-20">Moje Auto</p>
+        <p className="text-white ml-20">{texts.home.title}</p>
       </div>
       <div className="flex flex-shrink-0 items-center space-x-4 text-white">
         <div className="flex flex-col items-end ">
+          {router.locale === "en" ? (
+            <Image width="4rem" height="2rem" src="/../assets/pl_logo.png" />
+          ) : (
+            <Image width="4rem" height="2rem" src="/../assets/en_logo.png" />
+          )}
           {!user && (
             <div className="inline-flex items-center">
               <IoWarningOutline className="mr-4" />
-              Niezalogowany użytkownik!
+              {texts.messages.unsignedUser}
             </div>
           )}
-          {!!loading && <div>Ładowanie...</div>}
+          {!!loading && <div>{texts.messages.loading}</div>}
           {!!user && (
             <div className="inline-flex items-center">
-              {/* <div className="text-md font-medium">{user.email}</div> */}
               {!user.photoURL && <p>{user.displayName}</p>}
               {user.photoURL && (
                 <img
@@ -49,7 +60,7 @@ function Header() {
                 className="text-md bg-blue-400 p-2 rounded-md"
                 onClick={() => logout()}
               >
-                Wyloguj
+                {texts.header.signOut}
               </button>
             </div>
           )}

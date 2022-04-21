@@ -1,0 +1,27 @@
+{
+  "home": {
+    "title": "My Vehicle",
+    "greeting": "Start tracking your expenses now!"
+  },
+  "header": {
+    "signOut": "Sign Out"
+  },
+  "addExpense": {
+    "title": "Add an expense - My Vehicle",
+    "addExpense": "Add an expense",
+    "avgFuelUsage": "Average fuel usage",
+    "carMileage": "Car mileage",
+    "fillingDate": "Filling date",
+    "fuelAmount": "Fuel amount",
+    "fuelPrice": "Fuel price",
+    "gasStation": "Gas station",
+    "totalPrice": "Total price",
+    "totalRun": "Total run (km)",
+    "addButton": "Add"
+  },
+  "messages": {
+    "unsignedUser": "Unsigned user!",
+    "loading": "Loading...",
+    "fieldRequired": "Field required!"
+  }
+}
