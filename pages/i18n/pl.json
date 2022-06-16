@@ -28,5 +28,8 @@
   "signIn": {
     "header": "Moje Auto - Logowanie",
     "subHeader": "W celu skorzystania z aplikacji prosimy o zalogowanie się."
+  },
+  "userPanel": {
+    "welcomeMessage": "Witaj"
   }
 }

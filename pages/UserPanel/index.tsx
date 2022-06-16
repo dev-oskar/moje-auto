@@ -15,6 +15,8 @@ function PreviousExpenses() {
     {}
   );
 
+  const texts = loadTranslations();
+
   return (
     <div className="w-full h-2/5">
       <Head>
@@ -23,7 +25,9 @@ function PreviousExpenses() {
       {!user && <SignIn />}
       {user && (
         <div className="md:container md:mx-auto">
-          <h1>Witaj, {user.displayName}</h1>
+          <h1>
+            {texts.userPanel.welcomeMessage}, {user.displayName}
+          </h1>
         </div>
       )}
     </div>

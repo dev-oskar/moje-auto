@@ -12,7 +12,7 @@ function Home() {
   return (
     <div className="w-full h-2/5">
       <Head>
-        <title>{texts.home_title}</title>
+        <title>{texts.home.title}</title>
       </Head>
       {!user && <SignIn />}
       {user && (

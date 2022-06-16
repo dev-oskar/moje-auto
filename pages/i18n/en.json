@@ -28,5 +28,8 @@
   "signIn": {
     "header": "My Vehicle - Sign In",
     "subHeader": "In order to use the app please log in using below providers."
+  },
+  "userPanel": {
+    "welcomeMessage": "Hello"
   }
 }
