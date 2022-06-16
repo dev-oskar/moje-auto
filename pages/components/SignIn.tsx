@@ -2,6 +2,7 @@
 import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "../../firebase/clientApp";
+import loadTranslations from "../_loadTranslations";
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -17,6 +18,8 @@ const uiConfig = {
 };
 
 function SignInScreen() {
+  const texts = loadTranslations();
+
   return (
     <div
       style={{
@@ -27,8 +30,8 @@ function SignInScreen() {
         justifyContent: "center",
       }}
     >
-      <h1>Moje Auto - Logowanie</h1>
-      <p>W celu skorzystania z aplikacji prosimy o zalogowanie się.</p>
+      <h1>{texts.signIn.header}</h1>
+      <p>{texts.signIn.subHeader}</p>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
     </div>
   );

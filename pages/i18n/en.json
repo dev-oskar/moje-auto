@@ -22,6 +22,11 @@
   "messages": {
     "unsignedUser": "Unsigned user!",
     "loading": "Loading...",
-    "fieldRequired": "Field required!"
+    "fieldRequired": "Field required!",
+    "authFailed": "Authorization failed!"
+  },
+  "signIn": {
+    "header": "My Vehicle - Sign In",
+    "subHeader": "In order to use the app please log in using below providers."
   }
 }

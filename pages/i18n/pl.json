@@ -22,6 +22,11 @@
   "messages": {
     "unsignedUser": "Niezalogowany użytkownik!",
     "loading": "Ładowanie...",
-    "fieldRequired": "Pole wymagane!"
+    "fieldRequired": "Pole wymagane!",
+    "authFailed": "Autoryzacja nie powiodła się!"
+  },
+  "signIn": {
+    "header": "Moje Auto - Logowanie",
+    "subHeader": "W celu skorzystania z aplikacji prosimy o zalogowanie się."
   }
 }

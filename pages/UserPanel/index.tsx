@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Head from "next/head";
 import SignIn from "../components/SignIn";
+import loadTranslations from "../_loadTranslations";
 
 function PreviousExpenses() {
   // Destructure user, loading, and error our of the hook
@@ -19,12 +20,11 @@ function PreviousExpenses() {
       <Head>
         <title>Panel użytkownika</title>
       </Head>
-      {/* <div className="mx-auto my- w-2/6"> */}
       {!user && <SignIn />}
       {user && (
-      <div className="md:container md:mx-auto">
-        <h1>Witaj, {user.displayName}</h1>
-      </div>
+        <div className="md:container md:mx-auto">
+          <h1>Witaj, {user.displayName}</h1>
+        </div>
       )}
     </div>
   );

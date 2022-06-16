@@ -4,11 +4,11 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { IoWarningOutline } from "react-icons/io5";
 import loadTranslations from "../_loadTranslations";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Link from "next/link";
 
 function Header() {
   const router = useRouter();
-  const { locale, locales, defaultLocale } = router;
+  // const { locale, locales, defaultLocale } = router;
   const texts = loadTranslations();
 
   // Destructure user, loading, and error our of the hook
@@ -24,7 +24,7 @@ function Header() {
   };
 
   if (error) {
-    return <div>Błąd podczas autoryzacji!</div>;
+    return <div>{texts.messages.authFailed}</div>;
   }
 
   return (
@@ -34,15 +34,10 @@ function Header() {
       </div>
       <div className="flex flex-shrink-0 items-center space-x-4 text-white">
         <div className="flex flex-col items-end ">
-          {router.locale === "en" ? (
-            <Image width="4rem" height="2rem" src="/../assets/pl_logo.png" />
-          ) : (
-            <Image width="4rem" height="2rem" src="/../assets/en_logo.png" />
-          )}
           {!user && (
             <div className="inline-flex items-center">
               <IoWarningOutline className="mr-4" />
-              {texts.messages.unsignedUser}
+              <Link href="/SignIn">{texts.messages.unsignedUser}</Link>
             </div>
           )}
           {!!loading && <div>{texts.messages.loading}</div>}
