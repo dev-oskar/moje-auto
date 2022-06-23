@@ -20,7 +20,7 @@ function PreviousExpenses() {
   return (
     <div className="w-full h-2/5">
       <Head>
-        <title>Panel użytkownika</title>
+        <title>{texts.userPanel.title}</title>
       </Head>
       {!user && <SignIn />}
       {user && (
