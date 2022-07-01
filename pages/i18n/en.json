@@ -22,14 +22,33 @@
   "messages": {
     "unsignedUser": "Unsigned user!",
     "loading": "Loading...",
+    "loadingFailed": "Error while loading data. Please contact administrator.",
     "fieldRequired": "Field required!",
     "authFailed": "Authorization failed!"
+  },
+  "previousExpenses": {
+    "title": "Previous expenses - My Vehicle",
+    "subtitle": "Previous expenses",
+    "loading": "Loading expenses...",
+    "fuelUsage": "Fuel usage:",
+    "carMileage": "Car mileage:",
+    "fillingDate": "Filling date:",
+    "fuelAmount": "Fuel amount:",
+    "fuelPrice": "Fuel price:",
+    "gasStation": "Gas station:",
+    "totalPrice": "Total price:",
+    "totalRun": "Total run (km):",
+    "fuelUsageUnit": "l/100 km",
+    "mileageUnit": "km",
+    "capacityUnit": "l",
+    "currency": "PLN"
   },
   "signIn": {
     "header": "My Vehicle - Sign In",
     "subHeader": "In order to use the app please log in using below providers."
   },
   "userPanel": {
+    "title": "User panel",
     "welcomeMessage": "Hello"
   }
 }

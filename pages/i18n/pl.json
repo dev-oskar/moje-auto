@@ -15,21 +15,40 @@
     "fuelAmount": "Ilość paliwa",
     "fuelPrice": "Cena paliwa",
     "gasStation": "Stacja benzynowa",
-    "totalPrice": "Cena całości",
+    "totalPrice": "Łączna suma",
     "totalRun": "Ilość przejechanych km",
     "addButton": "Dodaj"
   },
   "messages": {
     "unsignedUser": "Niezalogowany użytkownik!",
     "loading": "Ładowanie...",
+    "loadingFailed": "Błąd podczas ładowania danych. Proszę, skontaktuj się z administratorem.",
     "fieldRequired": "Pole wymagane!",
     "authFailed": "Autoryzacja nie powiodła się!"
+  },
+  "previousExpenses": {
+    "title": "Poprzednie wydatki - Moje Auto",
+    "subtitle": "Poprzednie wydatki",
+    "loading": "Ładowanie wydatków...",
+    "fuelUsage": "Zużycie paliwa:",
+    "carMileage": "Przebieg:",
+    "fillingDate": "Data tankowania:",
+    "fuelAmount": "Ilość paliwa:",
+    "fuelPrice": "Cena paliwa:",
+    "gasStation": "Stacja benzynowa:",
+    "totalPrice": "Łączna suma:",
+    "totalRun": "Ilość przejechanych km:",
+    "fuelUsageUnit": "l/100 km",
+    "mileageUnit": "km",
+    "capacityUnit": "l",
+    "currency": "zł"
   },
   "signIn": {
     "header": "Moje Auto - Logowanie",
     "subHeader": "W celu skorzystania z aplikacji prosimy o zalogowanie się."
   },
   "userPanel": {
+    "title": "Panel użytkownika",
     "welcomeMessage": "Witaj"
   }
 }

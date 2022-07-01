@@ -4,60 +4,59 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Head from "next/head";
 import SignIn from "../components/SignIn";
+import loadTranslations from "../_loadTranslations";
 
 function PreviousExpenses() {
-  // Destructure user, loading, and error our of the hook
+  const texts = loadTranslations();
   const [user, loading, error] = useAuthState(firebase.auth());
-
   const [expenses, expensesLoading, expensesError] = useCollection(
     firebase.firestore().collection("expenses"),
     {}
   );
-
   return (
     <div>
       <Head>
-        <title>Poprzednie wydatki - Moje Auto</title>
+        <title>{texts.previousExpenses.title}</title>
       </Head>
       {error && (
-        <div>Error while loading data. Please contact administrator</div>
+        <div>{texts.messages.loadingFailed}</div>
       )}
-      {loading && <h4>Ładowanie...</h4>}
+      {loading && <h4>{texts.messages.loading}</h4>}
       {!user && <SignIn />}
       {user && (
         <div>
           <h1 className="h-full w-full m-4 flex flex-wrap items-start justify-center">
-            Poprzednie wydatki
+            {texts.previousExpenses.subtitle}
           </h1>
 
-          {expensesLoading && "Ładowanie wydatków ..."}
+          {expensesLoading && texts.previousExpenses.loading}
           <div className="h-full w-full flex flex-wrap items-start justify-center rounded-tl grid-flow-col gap-2">
             {expenses?.docs?.map((doc) => (
               <div className="p-4 w-2/3 h-60 rounded-lg bg-gray-700 font-sans text-white text-base">
                 <div className="">
-                  Zużycie paliwa: <b>{doc.data().avgFuelUsage} l / 100 km</b>
+                  {texts.previousExpenses.fuelUsage}<b>{doc.data().avgFuelUsage} {texts.previousExpenses.fuelUsageUnit}</b>
                 </div>
                 <div className="">
-                  Przebieg: <b>{doc.data().carMileage} km</b>
+                  {texts.previousExpenses.carMileage} <b>{doc.data().carMileage} {texts.previousExpenses.mileageUnit}</b>
                 </div>
                 <div className="">
-                  Data tankowania: <b>{doc.data().fillingDate}</b>
+                  {texts.previousExpenses.fillingDate} <b>{doc.data().fillingDate}</b>
                 </div>
                 <div className="">
-                  Ilość paliwa: <b>{doc.data().fuelAmount} l</b>
+                  {texts.previousExpenses.fuelAmount} <b>{doc.data().fuelAmount} {texts.previousExpenses.capacityUnit}</b>
                 </div>
                 <div className="">
-                  Cena paliwa: <b>{doc.data().fuelPrice} zł</b>
+                  {texts.previousExpenses.fuelPrice} <b>{doc.data().fuelPrice} {texts.previousExpenses.currency}</b>
                 </div>
                 <div className="">
-                  Stacja: <b>{doc.data().gasStation}</b>
+                  {texts.previousExpenses.gasStation} <b>{doc.data().gasStation}</b>
                 </div>
                 <div className="">
-                  Łączna suma: <b>{doc.data().totalPrice} zł</b>
+                  {texts.previousExpenses.totalPrice} <b>{doc.data().totalPrice} {texts.previousExpenses.currency}</b>
                 </div>
                 <div className="">
-                  Ilość przejechanych kilometrów:{" "}
-                  <b>{doc.data().totalRun} km</b>
+                  {texts.previousExpenses.totalRun}{" "}
+                  <b>{doc.data().totalRun} {texts.previousExpenses.mileageUnit}</b>
                 </div>
               </div>
             ))}
