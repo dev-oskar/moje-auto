@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSlidersH } from "react-icons/fa";
+import { FaPlus, FaSlidersH } from "react-icons/fa";
 import { FaTable } from "react-icons/fa";
 import { FaBurn } from "react-icons/fa";
 import { FaCarAlt } from "react-icons/fa";
@@ -16,24 +16,24 @@ function SideBar() {
       </Link>
       <Link href="/PreviousExpenses">
         <div className="sidebar-btn">
-          <FaTable className="h-7 w-7" />
+          <FaCarAlt className="h-7 w-7" />
         </div>
       </Link>
       <Link href="/AddExpense">
         <div className="sidebar-btn">
-          <FaBurn className="h-7 w-7" />
+          <FaPlus className="h-7 w-7" />
         </div>
       </Link>
-      <Link href="/UserCars">
+      {/* <Link href="/UserCars">
         <div className="sidebar-btn">
           <FaCarAlt className="h-7 w-7" />
         </div>
-      </Link>
-      <Link href="/UserSettings">
+      </Link> */}
+      {/* <Link href="/UserSettings">
         <div className="sidebar-btn">
           <FaSlidersH className="h-7 w-7" />
         </div>
-      </Link>
+      </Link> */}
     </aside>
   );
 }

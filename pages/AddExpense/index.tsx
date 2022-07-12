@@ -63,8 +63,10 @@ function AddExpense() {
               type="text"
               {...register("avgFuelUsage", { required: true })}
             />
-            {errors.avgFuelUsage?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.avgFuelUsage?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -80,8 +82,10 @@ function AddExpense() {
               type="number"
               {...register("carMileage", { required: true })}
             />
-            {errors.carMileage?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.carMileage?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -97,8 +101,10 @@ function AddExpense() {
               type="date"
               {...register("fillingDate", { required: true })}
             />
-            {errors.fillingDate?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.fillingDate?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -114,8 +120,10 @@ function AddExpense() {
               type="number"
               {...register("fuelAmount", { required: true })}
             />
-            {errors.fuelAmount?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.fuelAmount?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -131,8 +139,10 @@ function AddExpense() {
               type="number"
               {...register("fuelPrice", { required: true })}
             />
-            {errors.fuelPrice?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.fuelPrice?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -148,8 +158,10 @@ function AddExpense() {
               type="text"
               {...register("gasStation", { required: true })}
             />
-            {errors.gasStation?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.gasStation?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -165,8 +177,10 @@ function AddExpense() {
               type="number"
               {...register("totalPrice", { required: true })}
             />
-            {errors.totalPrice?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.totalPrice?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
           <div className="mb-4">
@@ -182,11 +196,13 @@ function AddExpense() {
               type="number"
               {...register("totalRun", { required: true })}
             />
-            {errors.totalRun?.type === "required" &&
-              texts.messages.fieldRequired}
+            <p className="form-error-msg">
+              {errors.totalRun?.type === "required" &&
+                texts.messages.fieldRequired}
+            </p>
           </div>
           <br />
-          <button className="sidebar-btn w-full">
+          <button className="form-btn w-full">
             {texts.addExpense.addButton}
           </button>
         </form>

@@ -14,3 +14,18 @@
   /* @apply hover:bg-white  hover:duration-300 hover:ease-linear focus:bg-white; */
   @apply bg-white text-green-800;
 }
+.form-btn {
+  @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md transition duration-150 ease-in-out;
+}
+.form-btn:hover {
+  @apply bg-blue-700 shadow-lg;
+}
+.form-btn:focus {
+  @apply bg-blue-700 shadow-lg outline-none ring-0;
+}
+.form-btn:active {
+  @apply bg-blue-800 shadow-lg;
+}
+.form-error-msg {
+  @apply text-red-600 transition duration-200 ease-in-out;
+}
